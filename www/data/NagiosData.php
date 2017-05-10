@@ -140,8 +140,8 @@ class NagiosData
 			/* serviceID index no longer exists, had to call array by index 
 			 * number instead 
 			 */
-			$id = str_replace('service', '', $arg); 
-			$retval = $details[$id];	//call service details by array index 
+			$id = str_replace('service', '', $arg);
+			$retval = join($details[$id], ($this->grab_details($type))[$id]);	//call service details by array index
 	
 		}
 		if ($type == 'host')	{
