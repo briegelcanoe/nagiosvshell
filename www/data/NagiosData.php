@@ -95,7 +95,6 @@ class NagiosData
 						
 		if (isset($this->properties[$var]))			
 			$retval = $this->properties[$var];
-
 		return $retval;
 	}
 
@@ -141,7 +140,9 @@ class NagiosData
 			 * number instead 
 			 */
 			$id = str_replace('service', '', $arg);
-			$retval = join($details[$id], ($this->grab_details($type))[$id]);	//call service details by array index
+			$objs = $this->grab_details('services_obj');                    
+			$retval = array_merge($details[$id], $objs[$id]);	//call service details by array index
+
 	
 		}
 		if ($type == 'host')	{

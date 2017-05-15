@@ -88,6 +88,7 @@ function process_service_detail($serviceid)
 	//service details array -> Use for displaying page 
 	$details = array( 
 					'Service' => $sd['service_description'],
+                                        'DisplayName' => empty($sd['display_name']) ? $sd['service_description'] : $sd['display_name'],
 					'Host'	  => $hostname,
 					'Output'  => $sd['plugin_output'],
 					'LongOutput'  => $sd['long_plugin_output'],
