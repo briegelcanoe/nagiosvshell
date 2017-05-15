@@ -140,8 +140,7 @@ class NagiosData
 			 * number instead 
 			 */
 			$id = str_replace('service', '', $arg);
-			$objs = $this->grab_details('services_obj');                    
-			$retval = array_merge($details[$id], $objs[$id]);	//call service details by array index
+			$retval = $details[$id];
 
 	
 		}
@@ -241,7 +240,14 @@ class NagiosData
 			$this->properties['permissions'] = parse_perms_file();
          if($apc_exists)
             $this->set_data_to_apc('permissions');
-		}		
+		}
+
+		$service_lookup = array();
+		foreach ($this->properties['services_objs'] as $value)
+			$service_lookup[$value['service_description']] = $value;
+
+		foreach ($this->properties['services'] as $value)
+			$value['obj'] = $service_lookup[$value['service_description']];
 	}//end raw_file_parse() 
 	
 	private function use_apc_data() {
