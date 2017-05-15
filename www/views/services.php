@@ -130,7 +130,7 @@ function display_services($services,$start,$limit)
 		
 		<tr class='statustablerow'>	
 			{$td1}
-			<td class='service_description'><div class='service_description'><a href="{$url}">{$services[$i]['service_description']}</a> $serviceicons </div></td>
+			<td class='service_description'><div class='service_description'><a href="{$url}">{$services[$i]['obj']['display_name']}</a> $serviceicons </div></td>
 			<td class="{$tr}">{$services[$i]['current_state']}</td>
 			<td class='duration'>{$services[$i]['duration']}</td>
 			<td class='attempt'>{$services[$i]['attempt']}</td>

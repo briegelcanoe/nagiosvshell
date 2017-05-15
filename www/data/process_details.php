@@ -83,12 +83,11 @@ function process_service_detail($serviceid)
 	//core commands
 	//$cmd_map = CORECGI.'statusmap.cgi?host='.$hostname.'&service='.$ser_desc;
 	$core_link = CORECGI.'extinfo.cgi?type=2&host='.$hostname.'&service='.$ser_desc;
-	
-											
+												
 	//service details array -> Use for displaying page 
 	$details = array( 
 					'Service' => $sd['service_description'],
-					'DisplayName' => empty(($sd['obj'])['display_name']) ? $sd['service_description'] : $sd['display_name'],
+					'DisplayName' => $sd['obj']['display_name'],
 					'Host'	  => $hostname,
 					'Output'  => $sd['plugin_output'],
 					'LongOutput'  => $sd['long_plugin_output'],
