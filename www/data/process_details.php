@@ -124,6 +124,7 @@ function process_service_detail($serviceid)
 					'CmdScheduleChecks'		=> htmlentities($cmd_schedule_checks),
 					'AckTitle'				=> $ack_title,
 					'CoreLink'			    => htmlentities($core_link),
+                                        'NotesUrl' => $sd['obj']['notes_url']
 					);
 								
 	return $details;

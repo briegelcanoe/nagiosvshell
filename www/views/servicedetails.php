@@ -88,7 +88,7 @@ function get_service_details($dets)
 		<tr><td>".gettext('Execution Time')."</td><td>{$dets['ExecutionTime']}</td></tr>
 		<tr><td>".gettext('State Change')."</td><td>{$dets['StateChange']}</td></tr>
 		<tr><td>".gettext('Performance Data')."</td><td><div class='td_maxwidth'>{$dets['PerformanceData']}</div></td></tr>
-		
+		<tr><td>".gettext('Notes URL')."</td><td><div class='td_maxwidth'><a href='{$dets['NotesUrl']}'>{$dets['NotesUrl']}</a></div></td></tr>		
 	</table>	
 	
 	</fieldset>
